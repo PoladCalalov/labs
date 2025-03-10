@@ -1,0 +1,18 @@
+import numpy as np 
+
+a = 1 
+
+x = np.arange(0, 2.2, 0.2)
+
+z_qiymetler = []
+
+for x_element in x:
+    ax = a*x_element
+    if ax >= 2:
+        z = 3*x_element**2 + 2*x_element
+    else:
+        z = 3*a - 2*x_element
+    z_qiymetler.append(z)
+
+for x,z in zip(x, z_qiymetler):
+    print(f"x = {x:.1f}, z = {z:.3f}")
