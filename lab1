@@ -1,0 +1,8 @@
+import math as mt
+m = (7.002*(0.1)**(1/8) -1 + 1/10*(mt.e**2 + mt.e**(-2)))**(1/5)
+n = mt.log(3)*(mt.cos(mt.pi/5) + mt.cos(3*mt.pi/5))
+
+if m**2 + n**2 <= 0.1:
+    print(mt.sin(5*m**2) + 7*n**2)
+else:
+    print(mt.tan(5*m**2 + 7*n**2)**(-1))
