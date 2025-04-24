@@ -1,0 +1,10 @@
+def tek_indeksli_cem(B):
+    cem = 0
+    for i in range(1, len(B), 2):  # tək indekslər: 1, 3, 5, ...
+        cem += B[i]
+    return cem
+
+B = [2.5, -1.3, 4.0, 7.1, -0.6, 3.3]
+
+netice = tek_indeksli_cem(B)
+print(netice)
