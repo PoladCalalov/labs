@@ -1,0 +1,21 @@
+def f(x):
+    return x**6 - 3*x**2 + x - 1
+
+def bisection_method(a, b, eps=1e-6):
+    if f(a) * f(b) > 0:
+        print("Bu intervalda kök yoxdur.")
+        return None
+
+    while (b - a) / 2 > eps:
+        c = (a + b) / 2
+        if abs(f(c)) < eps:
+            return c
+        if f(a) * f(c) < 0:
+            b = c
+        else:
+            a = c
+    return (a + b) / 2
+
+
+root = bisection_method(1.0, 1.5)
+print(f"Təqribi kök: {root}")
