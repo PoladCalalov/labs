@@ -1,0 +1,24 @@
+def f(x):
+    return x**6 - 3*x**2 + x - 1
+
+def df(x):
+    return 6*x**5 - 6*x + 1
+
+def newton_method(x0, eps=1e-6, max_iter=100):
+    for i in range(max_iter):
+        fx = f(x0)
+        dfx = df(x0)
+        if dfx == 0:
+            print("Törəmə sıfıra bərabərdir. Newton üsulu tətbiq edilə bilməz.")
+            return None
+        x1 = x0 - fx / dfx
+        if abs(x1 - x0) < eps:
+            return x1
+        x0 = x1
+    print("Maksimum iterasiya sayına çatıldı.")
+    return x0
+
+
+x0 = 1.0
+kök = newton_method(x0)
+print(f"Təqribi kök: {kök}")
