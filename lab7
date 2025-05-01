@@ -1,0 +1,30 @@
+
+massiv = [
+    [10, 3, 15, 8],
+    [20, 7, 5, 13],
+    [25, 9, 2, 30]
+]
+
+
+with open("input.txt", "w") as f:
+    for row in massiv:
+        f.write(" ".join(map(str, row)) + "\n")
+
+
+bolunmeyenler = []
+with open("input.txt", "r") as f:
+    for line in f:
+        numbers = map(int, line.strip().split())
+        for num in numbers:
+            if num % 5 != 0:
+                bolunmeyenler.append(num)
+
+
+with open("output.txt", "w") as f:
+    for num in bolunmeyenler:
+        f.write(str(num) + "\n")
+
+
+cem = sum(bolunmeyenler)
+print("5-ə bölünməyən ədədlər:", bolunmeyenler)
+print("Onların cəmi:", cem)
